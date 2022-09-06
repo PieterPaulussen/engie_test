@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "engie_test"
+name = "core"
 version = "0.1.0"
 description = "This is a small flask application with a basic layout to develop small test solutions."
 authors = ["Pieter Paulussen <pieterpaulussen@code-source.be>"]
+packages = [{ include = "core", from = "." }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -11,9 +12,17 @@ black = "^22.8.0"
 flake8 = "^5.0.4"
 isort = "^5.10.1"
 pre-commit = "^2.20.0"
+Flask = "^2.2.2"
+pydantic = "^1.10.1"
+Flask-Pydantic = "^0.10.0"
+uvicorn = "^0.18.3"
+numpy = "^1.23.2"
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = [ "tests" ]
